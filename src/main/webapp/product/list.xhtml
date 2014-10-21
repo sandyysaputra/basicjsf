@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<body>
+	<h:form>
+		<div align="center">
+			<h:outputText value="Search Data " /> 			
+			<h:inputText value="#{productController.search}" />
+			<h:commandButton value="Search" />
+			<h:dataTable var="p" value="#{productListController.products}"
+				border="1">
+				<f:facet name="header">List Product</f:facet>
+				<h:column>
+					<f:facet name="header">Product Name</f:facet>
+					<h:outputText value="#{p.name}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Price</f:facet>
+					<h:outputText value="#{p.price}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Stock</f:facet>
+					<h:outputText value="#{p.stock}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Desccription</f:facet>
+					<h:outputText value="#{p.description}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Actions</f:facet>
+					<h:link value="Edit" outcome="/product/form">
+						<f:param name="id" value="#{p.id}" />
+					</h:link>
+					<h:outputText value=" " />
+					<h:commandLink action="#{productController.delete}" value="Delete">
+						<f:param name="id" value="#{p.id}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+			<h:link outcome="/product/form" value="New Product" />
+		</div>
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Basic JSF elements</title>
+</h:head>
+<h:body bgcolor="white">
+	<h:form>
+		ID: <h:inputHidden value="#{basicElementBean.id}" /><br/>
+		Message: <h:inputText value="#{basicElementBean.message}" /><br/>
+		Password: <h:inputSecret value="#{basicElementBean.password}" /><br/>
+		Address: <h:inputTextarea value="#{basicElementBean.address}" /><br/>
+		<h:inputHidden value="#{basicElementBean.hiddenText}" />
+		<h:inputHidden value="#{basicElementBean.id}" />
+		Age: <h:outputText value="#{basicElementBean.age}"  style="font-weight:bold"/><br/>
+		Favorit fruits:
+		<h:selectManyCheckbox value="#{basicElementBean.favoritFruits}">
+			<f:selectItem itemValue="orange" itemLabel="Orange"/>
+			<f:selectItem itemValue="apple" itemLabel="Apple"/>
+			<f:selectItem itemValue="tomato" itemLabel="Tomato"/>
+			<f:selectItem itemValue="pear" itemLabel="Pear"/>
+		</h:selectManyCheckbox>
+		<br/>
+		Favorit Soap Opera:
+		<h:selectOneRadio value="#{basicElementBean.favoritSoapOpera}">
+			<f:selectItem itemValue="ggs" itemLabel="Ganteng-ganteng Sering Galau"/>
+			<f:selectItem itemValue="chsi" itemLabel="Curahan Hati Seorang Istri"/>
+			<f:selectItem itemValue="tbnh" itemLabel="Tukang Bubur Naik Haji"/>
+		</h:selectOneRadio>
+		<br/>
+		Favorit football club:
+		<h:selectOneMenu value="#{basicElementBean.favoritFootballClub}">
+			<f:selectItem itemValue="juventus" itemLabel="Juventus"/>
+			<f:selectItem itemValue="acmilan" itemLabel="AC Milan"/>
+			<f:selectItem itemValue="real" itemLabel="Real Madrid"/>
+			<f:selectItem itemValue="barca" itemLabel="Barcelona"/>
+		</h:selectOneMenu>
+		<br/>
+		<h:commandButton action="page2" value="Submit" /><br/>
+		<h:commandLink action="page3" value="Submit" /><br/>
+	</h:form>
+</h:body>
+</html>

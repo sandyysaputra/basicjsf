@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<body>
+	<h3 align="center">Product Form Form</h3>
+	<h:form>
+	<h:inputHidden value="#{productController.productId}" converter="javax.faces.Long" />
+		<div align="center">
+			<h:messages />
+			<h:panelGrid columns="2" border="1">
+				<h:outputText value="Choice Category" />
+				<h:selectOneMenu value="#{productController.category}">
+					<f:selectItems value="#{productController.categories}" var="c"
+						itemValue="#{c.id}" itemLabel="#{c.name}"></f:selectItems>
+				</h:selectOneMenu>
+
+				<h:outputText value="Product name" />
+				<h:inputText value="#{productController.name}" required="true"
+					label="Product Name" />
+
+				<h:outputText value="Price" />
+				<h:inputText value="#{productController.price}" required="true"
+					label="Price" />
+
+				<h:outputText value="Stock" />
+				<h:inputText value="#{productController.stock}" required="true"
+					label="Stock" />
+
+				<h:outputText value="Description" />
+				<h:inputText value="#{productController.description}"
+					required="true" label="Description" />
+
+				<h:commandButton action="#{productController.save}" value="Submit" />
+
+			</h:panelGrid>
+		</div>
+	</h:form>
+</body>
+</html>

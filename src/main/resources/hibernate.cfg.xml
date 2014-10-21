@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shop</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.connection.password"></property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="show_sql">true</property>
+  <property name="format_sql">true</property>
+  
+  <mapping class="id.co.skyforce.basicjsf.domain.Category"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.Product"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.Customer"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.Address"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.Order"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.OrderDetail"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.Supplier"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.PaymentMethod"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.Mahasiswa"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.Employee"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.ContractEmployee"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.PermanentEmployee"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.FreelanceEmployee"/>
+  <mapping class="id.co.skyforce.basicjsf.domain.PartTimeEmployee"/>
+ </session-factory>
+</hibernate-configuration>

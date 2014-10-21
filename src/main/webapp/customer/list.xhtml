@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<body>
+	<h:dataTable var="c" value="#{customerListController.customers}"
+		border="1">
+		<f:facet name="header"><h:outputText value="Customer Data" /></f:facet>
+		<h:column>
+			<f:facet name="header">Full Name</f:facet>
+			<h:outputText value="#{c.salutation} #{c.firstName} #{c.lastName}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Gender</f:facet>
+			<h:outputText value="#{c.gender}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Mobile Phone</f:facet>
+			<h:outputText value="#{c.mobileNo}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Home Phone</f:facet>
+			<h:outputText value="#{c.homePhone}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Birth Date</f:facet>
+			<h:outputText value="#{c.birthDate}">
+				<f:convertDateTime pattern="dd MMMM yyyy" />
+			</h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">email</f:facet>
+			<h:outputText value="#{c.email}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Address</f:facet>
+			<h:outputText value="#{c.address.city} #{c.address.street} #{c.address.postalCode}" />
+		</h:column>
+		<h:column>
+			<f:facet name = "header"> Actions</f:facet>
+			<h:link value="edit" outcome="/customer/form">
+				<f:param name = "id" value="#{c.id}"/>
+			</h:link>
+		</h:column>
+	</h:dataTable>
+	<h:link value = "New Customer" outcome="/customer/form"/>
+</body>
+</html>
